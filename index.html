@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="inner">
+      <a href="#" class="logo">Portfolio</a>
+      <button class="menu-toggle" aria-label="Meny">&#9776;</button>
+      <ul>
+        <li><a href="#om">Om mig</a></li>
+        <li><a href="#skills">Kompetenser</a></li>
+        <li><a href="#projekt">Projekt</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <p class="greeting">Hej, jag heter</p>
+    <h1>Ditt Namn<br><span>Webbutvecklare</span></h1>
+    <p>Jag bygger moderna, snabba och tillgängliga webbupplevelser. Välkommen att utforska mina projekt och ta kontakt.</p>
+    <div class="buttons">
+      <a href="#projekt" class="btn btn-primary">Se projekt</a>
+      <a href="#kontakt" class="btn btn-outline">Kontakta mig</a>
+    </div>
+  </section>
+
+  <!-- Om mig -->
+  <section id="om" class="fade-in">
+    <h2 class="section-title">Om mig</h2>
+    <p class="section-subtitle">Lite bakgrund och vem jag är</p>
+    <div class="about-grid">
+      <div class="about-avatar">&#128075;</div>
+      <div class="about-text">
+        <p>Jag är en passionerad utvecklare med ett öga för design och en kärlek till ren kod. Med erfarenhet inom både frontend och backend skapar jag lösningar som är både vackra och funktionella.</p>
+        <p>När jag inte kodar hittar du mig ute i naturen, med en bok, eller vid kaffeautomaten.</p>
+        <dl class="details">
+          <div><dt>Plats</dt><dd>Stockholm, Sverige</dd></div>
+          <div><dt>Erfarenhet</dt><dd>3+ år</dd></div>
+          <div><dt>Utbildning</dt><dd>Datateknik</dd></div>
+          <div><dt>Språk</dt><dd>Svenska, Engelska</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kompetenser -->
+  <section id="skills" class="fade-in">
+    <h2 class="section-title">Kompetenser</h2>
+    <p class="section-subtitle">Tekniker och verktyg jag jobbar med</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="icon">&#127912;</div>
+        <h3>Frontend</h3>
+        <p>HTML, CSS, JavaScript, React, TypeScript. Responsiv design och tillgänglighet.</p>
+      </div>
+      <div class="skill-card">
+        <div class="icon">&#9881;&#65039;</div>
+        <h3>Backend</h3>
+        <p>Node.js, Python, REST API:er, databaser som PostgreSQL och MongoDB.</p>
+      </div>
+      <div class="skill-card">
+        <div class="icon">&#128736;&#65039;</div>
+        <h3>Verktyg</h3>
+        <p>Git, Docker, CI/CD, Linux. Agila metoder och teamarbete.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projekt -->
+  <section id="projekt" class="fade-in">
+    <h2 class="section-title">Projekt</h2>
+    <p class="section-subtitle">Ett urval av vad jag har byggt</p>
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-thumb">&#128640;</div>
+        <div class="project-body">
+          <h3>E-handelsplattform</h3>
+          <p>En komplett webbutik med produkthantering, varukorg och betalningslösning.</p>
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Stripe</span>
+          </div>
+          <div class="project-links">
+            <a href="#">Demo &rarr;</a>
+            <a href="#">GitHub &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-thumb">&#128202;</div>
+        <div class="project-body">
+          <h3>Dashboard-app</h3>
+          <p>Realtidsdata visualiserad med interaktiva diagram och filtreringsfunktioner.</p>
+          <div class="tags">
+            <span class="tag">TypeScript</span>
+            <span class="tag">D3.js</span>
+            <span class="tag">PostgreSQL</span>
+          </div>
+          <div class="project-links">
+            <a href="#">Demo &rarr;</a>
+            <a href="#">GitHub &rarr;</a>
+          </div>
+        </div>
+      </div>
+      <div class="project-card">
+        <div class="project-thumb">&#128241;</div>
+        <div class="project-body">
+          <h3>Väder-app</h3>
+          <p>En progressiv webbapp som visar väderdata baserat på din position.</p>
+          <div class="tags">
+            <span class="tag">Vue.js</span>
+            <span class="tag">PWA</span>
+            <span class="tag">API</span>
+          </div>
+          <div class="project-links">
+            <a href="#">Demo &rarr;</a>
+            <a href="#">GitHub &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kontakt -->
+  <section id="kontakt" class="fade-in">
+    <h2 class="section-title">Kontakt</h2>
+    <p class="section-subtitle">Hör av dig — jag svarar gärna</p>
+    <div class="contact-wrapper">
+      <div class="contact-info">
+        <p>Har du en idé, ett projekt eller bara vill säga hej? Fyll i formuläret eller kontakta mig direkt via länkarna nedan.</p>
+        <div class="links">
+          <a href="mailto:din@email.se">&#9993;  din@email.se</a>
+          <a href="#">&#128279;  linkedin.com/in/dittnamn</a>
+          <a href="#">&#128187;  github.com/dittnamn</a>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Tack för ditt meddelande!');">
+        <input type="text" placeholder="Ditt namn" required>
+        <input type="email" placeholder="Din e-post" required>
+        <textarea placeholder="Ditt meddelande..." required></textarea>
+        <button type="submit" class="btn btn-primary" style="border:none;cursor:pointer;">Skicka meddelande</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2026 Ditt Namn. Byggd med kärlek och ren kod.
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
