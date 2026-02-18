@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  <title>Martin From — Engineering Physics, Chalmers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,154 +13,273 @@
   <!-- Navigation -->
   <nav>
     <div class="inner">
-      <a href="#" class="logo">Portfolio</a>
-      <button class="menu-toggle" aria-label="Meny">&#9776;</button>
+      <a href="#" class="logo">&lt;portfolio /&gt;</a>
+      <button class="menu-toggle" aria-label="Menu">&#9776;</button>
       <ul>
-        <li><a href="#om">Om mig</a></li>
-        <li><a href="#skills">Kompetenser</a></li>
-        <li><a href="#projekt">Projekt</a></li>
-        <li><a href="#kontakt">Kontakt</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Hero -->
   <section class="hero">
-    <p class="greeting">Hej, jag heter</p>
-    <h1>Ditt Namn<br><span>Webbutvecklare</span></h1>
-    <p>Jag bygger moderna, snabba och tillgängliga webbupplevelser. Välkommen att utforska mina projekt och ta kontakt.</p>
-    <div class="buttons">
-      <a href="#projekt" class="btn btn-primary">Se projekt</a>
-      <a href="#kontakt" class="btn btn-outline">Kontakta mig</a>
+    <div class="hero-content">
+      <p class="greeting">Hi, I'm</p>
+      <h1>Martin From<br><span id="typewriter"></span><span class="cursor">|</span></h1>
+      <p>3rd-year Engineering Physics student at Chalmers University of Technology. I apply rigorous mathematics and physics to computational problems — from Bayesian inference to quantitative modelling.</p>
+      <div class="buttons">
+        <a href="#projects" class="btn btn-primary">View projects</a>
+        <a href="#contact" class="btn btn-outline">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-code">
+      <div class="code-window">
+        <div class="code-titlebar">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="code-filename">bayesian_regime.py</span>
+        </div>
+        <pre class="code-body"><code><span class="c-kw">import</span> numpy <span class="c-kw">as</span> np
+<span class="c-kw">from</span> scipy.stats <span class="c-kw">import</span> norm
+
+<span class="c-comment"># AR(1) state-space regime model</span>
+<span class="c-kw">def</span> <span class="c-fn">posterior_update</span>(prior, obs, sigma):
+    precision <span class="c-op">=</span> <span class="c-num">1</span> / prior.var() <span class="c-op">+</span> <span class="c-num">1</span> / sigma<span class="c-op">**</span><span class="c-num">2</span>
+    mu_post   <span class="c-op">=</span> (prior.mean() / prior.var()
+                <span class="c-op">+</span> obs / sigma<span class="c-op">**</span><span class="c-num">2</span>) / precision
+    <span class="c-kw">return</span> norm(mu_post, precision<span class="c-op">**</span><span class="c-op">-</span><span class="c-num">.5</span>)
+
+<span class="c-comment"># Identify bull / bear regime from returns</span>
+regime <span class="c-op">=</span> posterior_update(prior, market_return, vol)
+signal <span class="c-op">=</span> <span class="c-str">"bull"</span> <span class="c-kw">if</span> regime.mean() <span class="c-op">&gt;</span> <span class="c-num">0</span> <span class="c-kw">else</span> <span class="c-str">"bear"</span></code></pre>
+      </div>
     </div>
   </section>
 
-  <!-- Om mig -->
-  <section id="om" class="fade-in">
-    <h2 class="section-title">Om mig</h2>
-    <p class="section-subtitle">Lite bakgrund och vem jag är</p>
+  <!-- About -->
+  <section id="about" class="fade-in">
+    <h2 class="section-title">About Me</h2>
+    <p class="section-subtitle">Background & interests</p>
     <div class="about-grid">
-      <div class="about-avatar">&#128075;</div>
+      <div class="about-avatar">⚛</div>
       <div class="about-text">
-        <p>Jag är en passionerad utvecklare med ett öga för design och en kärlek till ren kod. Med erfarenhet inom både frontend och backend skapar jag lösningar som är både vackra och funktionella.</p>
-        <p>När jag inte kodar hittar du mig ute i naturen, med en bok, eller vid kaffeautomaten.</p>
+        <p>I'm pursuing an MSc-integrated degree in Engineering Physics at Chalmers University of Technology (Teknisk Fysik, F), currently in my third year. My coursework spans quantum mechanics, statistical mechanics, Fourier and complex analysis, Bayesian inference, and machine learning — fields I find deeply connected.</p>
+        <p>Outside the lecture hall I apply these tools to quantitative finance: building backtesting engines, Bayesian regime classifiers, and data pipelines. I'm drawn to problems where precision matters.</p>
         <dl class="details">
-          <div><dt>Plats</dt><dd>Stockholm, Sverige</dd></div>
-          <div><dt>Erfarenhet</dt><dd>3+ år</dd></div>
-          <div><dt>Utbildning</dt><dd>Datateknik</dd></div>
-          <div><dt>Språk</dt><dd>Svenska, Engelska</dd></div>
+          <div><dt>Location</dt><dd>Gothenburg, Sweden</dd></div>
+          <div><dt>Programme</dt><dd>Engineering Physics (F)</dd></div>
+          <div><dt>University</dt><dd>Chalmers, Year 3</dd></div>
+          <div><dt>Languages</dt><dd>Swedish, English</dd></div>
         </dl>
       </div>
     </div>
   </section>
 
-  <!-- Kompetenser -->
+  <!-- Skills -->
   <section id="skills" class="fade-in">
-    <h2 class="section-title">Kompetenser</h2>
-    <p class="section-subtitle">Tekniker och verktyg jag jobbar med</p>
+    <h2 class="section-title">Skills</h2>
+    <p class="section-subtitle">Tools, methods and domains</p>
     <div class="skills-grid">
       <div class="skill-card">
-        <div class="icon">&#127912;</div>
-        <h3>Frontend</h3>
-        <p>HTML, CSS, JavaScript, React, TypeScript. Responsiv design och tillgänglighet.</p>
+        <div class="icon">🐍</div>
+        <h3>Scientific Python</h3>
+        <p>NumPy · SciPy · Pandas · Matplotlib · Jupyter. Numerical methods, data wrangling, and simulation from scratch.</p>
       </div>
       <div class="skill-card">
-        <div class="icon">&#9881;&#65039;</div>
-        <h3>Backend</h3>
-        <p>Node.js, Python, REST API:er, databaser som PostgreSQL och MongoDB.</p>
+        <div class="icon icon-math">∂</div>
+        <h3>Mathematics</h3>
+        <p>Linear algebra, complex & Fourier analysis, ODEs & PDEs, probability theory, and stochastic processes.</p>
       </div>
       <div class="skill-card">
-        <div class="icon">&#128736;&#65039;</div>
-        <h3>Verktyg</h3>
-        <p>Git, Docker, CI/CD, Linux. Agila metoder och teamarbete.</p>
+        <div class="icon">⚛</div>
+        <h3>Physics</h3>
+        <p>Classical & quantum mechanics, statistical mechanics, electrodynamics, optics, and solid-state physics.</p>
+      </div>
+      <div class="skill-card">
+        <div class="icon icon-math">~</div>
+        <h3>Data & Bayesian ML</h3>
+        <p>Bayesian inference, AR(1) state-space models, MCMC, regression, data structures & algorithms.</p>
       </div>
     </div>
   </section>
 
-  <!-- Projekt -->
-  <section id="projekt" class="fade-in">
-    <h2 class="section-title">Projekt</h2>
-    <p class="section-subtitle">Ett urval av vad jag har byggt</p>
+  <!-- Coursework -->
+  <section id="courses" class="fade-in">
+    <h2 class="section-title">Coursework</h2>
+    <p class="section-subtitle">Selected courses from Chalmers Engineering Physics (F)</p>
+    <div class="courses-grid">
+      <div class="course-category">
+        <h4>Mathematics</h4>
+        <div class="course-pills">
+          <span class="cpill">Linear Algebra</span>
+          <span class="cpill">Multivariable Calculus</span>
+          <span class="cpill">Complex Analysis</span>
+          <span class="cpill">Fourier Analysis</span>
+          <span class="cpill">Partial Differential Equations</span>
+          <span class="cpill">Probability & Statistics</span>
+          <span class="cpill">Mathematical Physics</span>
+          <span class="cpill">Special Relativity</span>
+        </div>
+      </div>
+      <div class="course-category">
+        <h4>Physics</h4>
+        <div class="course-pills">
+          <span class="cpill">Classical Mechanics</span>
+          <span class="cpill">Electrodynamics</span>
+          <span class="cpill">Quantum Physics</span>
+          <span class="cpill">Statistical Mechanics</span>
+          <span class="cpill">Thermodynamics</span>
+          <span class="cpill">Solid State Physics</span>
+          <span class="cpill">Optics</span>
+          <span class="cpill">Subatomic Physics</span>
+          <span class="cpill">Experimental Physics</span>
+        </div>
+      </div>
+      <div class="course-category">
+        <h4>Computation & Engineering</h4>
+        <div class="course-pills">
+          <span class="cpill">Programming & Numerical Analysis</span>
+          <span class="cpill">Bayesian Inference & ML</span>
+          <span class="cpill">Data Structures & Algorithms</span>
+          <span class="cpill">Control Theory</span>
+          <span class="cpill">Continuum Mechanics</span>
+          <span class="cpill">Finite Element Method</span>
+          <span class="cpill">Python (Advanced)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="fade-in">
+    <h2 class="section-title">Projects</h2>
+    <p class="section-subtitle">Things I've built</p>
     <div class="projects-grid">
+
       <div class="project-card">
-        <div class="project-thumb">&#128640;</div>
+        <div class="project-thumb">
+          <svg viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="60" x2="120" y2="60" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <line x1="0" y1="40" x2="120" y2="40" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <line x1="0" y1="20" x2="120" y2="20" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+            <polyline points="5,58 20,50 40,44 60,36 80,26 100,18 115,13" stroke="rgba(255,255,255,0.3)" stroke-width="1" fill="none" stroke-dasharray="3,2"/>
+            <line x1="18" y1="44" x2="18" y2="63" stroke="white" stroke-width="1.5" opacity="0.6"/>
+            <rect x="13" y="50" width="10" height="9" fill="#ff6584" rx="1.5"/>
+            <line x1="38" y1="37" x2="38" y2="56" stroke="white" stroke-width="1.5" opacity="0.6"/>
+            <rect x="33" y="42" width="10" height="9" fill="rgba(255,255,255,0.9)" rx="1.5"/>
+            <line x1="58" y1="29" x2="58" y2="49" stroke="white" stroke-width="1.5" opacity="0.6"/>
+            <rect x="53" y="34" width="10" height="10" fill="rgba(255,255,255,0.9)" rx="1.5"/>
+            <line x1="78" y1="20" x2="78" y2="38" stroke="white" stroke-width="1.5" opacity="0.6"/>
+            <rect x="73" y="24" width="10" height="10" fill="rgba(255,255,255,0.9)" rx="1.5"/>
+            <line x1="98" y1="12" x2="98" y2="30" stroke="white" stroke-width="1.5" opacity="0.6"/>
+            <rect x="93" y="15" width="10" height="10" fill="#ff6584" rx="1.5"/>
+          </svg>
+        </div>
         <div class="project-body">
-          <h3>E-handelsplattform</h3>
-          <p>En komplett webbutik med produkthantering, varukorg och betalningslösning.</p>
+          <h3>Algorithmic Trading Engine</h3>
+          <p>Modular event-driven backtesting framework with MA-crossover and inside-bar strategies. Includes Bayesian AR(1) regime filtering and performance reporting. Validated on BTC/USD and OMXS30 data.</p>
           <div class="tags">
-            <span class="tag">React</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">Stripe</span>
+            <span class="tag">Python</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">Bayesian Statistics</span>
+            <span class="tag">Quant Finance</span>
           </div>
           <div class="project-links">
-            <a href="#">Demo &rarr;</a>
             <a href="#">GitHub &rarr;</a>
           </div>
         </div>
       </div>
+
       <div class="project-card">
-        <div class="project-thumb">&#128202;</div>
+        <div class="project-thumb">
+          <svg viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="10" y1="70" x2="110" y2="70" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+            <path d="M10,68 Q28,66 42,44 Q60,8 78,44 Q92,66 110,68" stroke="rgba(255,255,255,0.35)" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>
+            <path d="M32,69 Q48,67 54,32 Q60,6 66,32 Q72,67 88,69" stroke="white" stroke-width="2" fill="none" opacity="0.9"/>
+            <path d="M32,70 Q48,68 54,32 Q60,6 66,32 Q72,68 88,70 Z" fill="rgba(255,255,255,0.08)"/>
+            <text x="14" y="55" font-size="7" fill="rgba(255,255,255,0.45)" font-family="monospace">prior</text>
+            <text x="68" y="44" font-size="7" fill="rgba(255,255,255,0.85)" font-family="monospace">posterior</text>
+            <line x1="60" y1="6" x2="60" y2="70" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="2,3"/>
+          </svg>
+        </div>
         <div class="project-body">
-          <h3>Dashboard-app</h3>
-          <p>Realtidsdata visualiserad med interaktiva diagram och filtreringsfunktioner.</p>
+          <h3>Bayesian Regime Classifier</h3>
+          <p>AR(1) state-space model with full Bayesian inference to classify bull and bear market regimes from historical return series. Used as a real-time signal filter in the trading engine.</p>
           <div class="tags">
-            <span class="tag">TypeScript</span>
-            <span class="tag">D3.js</span>
-            <span class="tag">PostgreSQL</span>
+            <span class="tag">Bayesian Inference</span>
+            <span class="tag">NumPy / SciPy</span>
+            <span class="tag">Statistical Modelling</span>
           </div>
           <div class="project-links">
-            <a href="#">Demo &rarr;</a>
             <a href="#">GitHub &rarr;</a>
           </div>
         </div>
       </div>
+
       <div class="project-card">
-        <div class="project-thumb">&#128241;</div>
+        <div class="project-thumb">
+          <svg viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line x1="10" y1="40" x2="110" y2="40" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+            <path d="M10,40 Q20,12 30,40 Q40,68 50,40 Q60,12 70,40 Q80,68 90,40 Q100,20 110,40"
+                  stroke="white" stroke-width="2" fill="none" opacity="0.9"/>
+            <path d="M10,40 Q16,28 22,40 Q28,52 34,40 Q40,28 46,40 Q52,52 58,40 Q64,28 70,40 Q76,52 82,40 Q88,28 94,40 Q100,50 106,40 Q110,35 114,40 L114,70 L10,70 Z"
+                  fill="rgba(255,255,255,0.06)"/>
+            <path d="M10,40 Q16,28 22,40 Q28,52 34,40 Q40,28 46,40 Q52,52 58,40 Q64,28 70,40 Q76,52 82,40 Q88,28 94,40 Q100,50 106,40 Q110,35 114,40"
+                  stroke="rgba(255,255,255,0.3)" stroke-width="1.5" fill="none"/>
+            <text x="8" y="16" font-size="10" fill="rgba(255,255,255,0.85)" font-family="monospace">ψ(x)</text>
+            <text x="8" y="30" font-size="9" fill="rgba(255,255,255,0.35)" font-family="monospace">|ψ|²</text>
+          </svg>
+        </div>
         <div class="project-body">
-          <h3>Väder-app</h3>
-          <p>En progressiv webbapp som visar väderdata baserat på din position.</p>
+          <h3>Quantum Systems: Numerical Solutions</h3>
+          <p>Finite-difference solver for the time-independent Schrödinger equation. Computed and visualised eigenstates and probability densities for potential wells, barriers, and the quantum harmonic oscillator.</p>
           <div class="tags">
-            <span class="tag">Vue.js</span>
-            <span class="tag">PWA</span>
-            <span class="tag">API</span>
+            <span class="tag">Python</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Numerical Methods</span>
+            <span class="tag">Quantum Physics</span>
           </div>
           <div class="project-links">
-            <a href="#">Demo &rarr;</a>
             <a href="#">GitHub &rarr;</a>
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- Kontakt -->
-  <section id="kontakt" class="fade-in">
-    <h2 class="section-title">Kontakt</h2>
-    <p class="section-subtitle">Hör av dig — jag svarar gärna</p>
+  <!-- Contact -->
+  <section id="contact" class="fade-in">
+    <h2 class="section-title">Contact</h2>
+    <p class="section-subtitle">Get in touch</p>
     <div class="contact-wrapper">
       <div class="contact-info">
-        <p>Har du en idé, ett projekt eller bara vill säga hej? Fyll i formuläret eller kontakta mig direkt via länkarna nedan.</p>
+        <p>Have a project, research question, or just want to connect? Reach out via email or any of the links below.</p>
         <div class="links">
-          <a href="mailto:din@email.se">&#9993;  din@email.se</a>
-          <a href="#">&#128279;  linkedin.com/in/dittnamn</a>
-          <a href="#">&#128187;  github.com/dittnamn</a>
+          <a href="mailto:your@email.com">&#9993;&nbsp; your@email.com</a>
+          <a href="#">&#128279;&nbsp; linkedin.com/in/yourname</a>
+          <a href="#">&#128187;&nbsp; github.com/yourname</a>
         </div>
       </div>
-      <form class="contact-form" onsubmit="event.preventDefault(); alert('Tack för ditt meddelande!');">
-        <input type="text" placeholder="Ditt namn" required>
-        <input type="email" placeholder="Din e-post" required>
-        <textarea placeholder="Ditt meddelande..." required></textarea>
-        <button type="submit" class="btn btn-primary" style="border:none;cursor:pointer;">Skicka meddelande</button>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert('Message sent — thanks!');">
+        <input type="text" placeholder="Your name" required>
+        <input type="email" placeholder="Your email" required>
+        <textarea placeholder="Your message..." required></textarea>
+        <button type="submit" class="btn btn-primary" style="border:none;cursor:pointer;">Send message</button>
       </form>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    &copy; 2026 Ditt Namn. Byggd med kärlek och ren kod.
+    &copy; 2026 Martin From &mdash; Engineering Physics, Chalmers University of Technology
   </footer>
 
   <script src="main.js"></script>
 </body>
 </html>
-
